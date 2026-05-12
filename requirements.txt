@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pillow
+torch
+transformers
+sentence-transformers
+chromadb
+spacy
+passlib
+python-multipart
+aiosqlite
+sqlalchemy
+bcrypt
