@@ -1,0 +1,45 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://user:password@postgres:5432/fridge_db
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./uploads:/app/uploads
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: fridge_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  celery_worker:
+    build: .
+    command: celery -A app.celery_app worker --loglevel=info --pool=solo
+    depends_on:
+      - redis
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://user:password@postgres:5432/fridge_db
+      - REDIS_URL=redis://redis:6379/0
+
+volumes:
+  postgres_data:
+  redis_data:

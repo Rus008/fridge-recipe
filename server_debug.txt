@@ -1,0 +1,20 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/418 [00:00<?, ?it/s]Loading weights: 100%|##########| 418/418 [00:00<00:00, 5200.16it/s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 5350.77it/s]
+2026-05-11 14:54:49 [36m[DEBUG][0m app.recipes: Размер бд Chroma: 4821[0m
+INFO:     Started server process [12068]
+INFO:     Waiting for application startup.
+2026-05-11 14:54:49,825 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-05-11 14:54:49,826 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+2026-05-11 14:54:49,826 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-05-11 14:54:49,828 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("fridge_items")
+2026-05-11 14:54:49,828 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-05-11 14:54:49,829 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("recipes")
+2026-05-11 14:54:49,829 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-05-11 14:54:49,830 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("detection_history")
+2026-05-11 14:54:49,830 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-05-11 14:54:49,832 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
